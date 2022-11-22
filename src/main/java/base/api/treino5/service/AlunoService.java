@@ -38,4 +38,16 @@ public class AlunoService {
         alunoOptional.orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
         alunoRepository.deleteById(id);
     }
+
+    public Aluno update(AlunoRequestDto alunoRequestDto) {
+        if(existById(alunoRequestDto.getId())) {
+            return alunoRepository.save(mapper.map(alunoRequestDto, Aluno.class));
+        } else {
+            throw new RuntimeException("Aluno não existe!");
+        }
+    }
+
+    private boolean existById(Long id){
+        return alunoRepository.existsById(id);
+    }
 }
