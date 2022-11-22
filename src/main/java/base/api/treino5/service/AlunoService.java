@@ -5,6 +5,7 @@ import base.api.treino5.entities.Aluno;
 import base.api.treino5.repository.AlunoRepository;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import javax.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -30,5 +31,11 @@ public class AlunoService {
     public Aluno findById(Long id) {
         return alunoRepository.findById(id)
                 .orElseThrow(RuntimeException::new);
+    }
+
+    public void deleteById(Long id) {
+        Optional<Aluno> alunoOptional = alunoRepository.findById(id);
+        alunoOptional.orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
+        alunoRepository.deleteById(id);
     }
 }
