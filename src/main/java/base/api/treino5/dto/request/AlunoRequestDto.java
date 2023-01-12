@@ -7,12 +7,9 @@ import lombok.Setter;
 @Getter @Setter
 public class AlunoRequestDto {
 
-
     private Long id;
     private String nome;
     private String cpf;
-    private String turma;
     private LocalDate dataDeNascimento;
     private String telefone;
-
 }

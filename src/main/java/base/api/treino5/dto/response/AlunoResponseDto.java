@@ -8,6 +8,5 @@ public class AlunoResponseDto {
 
     private Long id;
     private String nome;
-    private String turma;
-
+    private String telefone;
 }
