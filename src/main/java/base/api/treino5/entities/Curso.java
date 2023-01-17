@@ -12,7 +12,8 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 @Table(name = "tb_cursos")
 public class Curso {
@@ -21,12 +22,18 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "aluno_id")
     private Aluno aluno;
 
-    private String curso;
+    private String disciplina;
+
     private String periodo;
+
+    private String cargaHoraria;
+
+    private String dificuldade;
 
 }
