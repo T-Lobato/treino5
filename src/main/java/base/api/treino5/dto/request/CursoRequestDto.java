@@ -16,5 +16,4 @@ public class CursoRequestDto {
     private String periodo;
     private String cargaHoraria;
     private String dificuldade;
-
 }

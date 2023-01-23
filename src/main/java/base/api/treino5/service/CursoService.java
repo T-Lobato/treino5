@@ -31,4 +31,26 @@ public class CursoService {
 
         return cursoRepository.save(curso);
     }
+
+    public Curso findById(Long id) {
+        return cursoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Curso não encontrado"));
+    }
+
+    @Transactional
+    public Curso update(CursoRequestDto cursoRequestDto, Long id) {
+
+        Curso curso = this.findById(id);
+        curso.setDisciplina(cursoRequestDto.getDisciplina());
+        curso.setPeriodo(cursoRequestDto.getPeriodo());
+        curso.setCargaHoraria(cursoRequestDto.getCargaHoraria());
+        curso.setDificuldade(cursoRequestDto.getDificuldade());
+        cursoRepository.save(curso);
+        return curso;
+    }
+
+    public void deleteById(Long id) {
+        Curso curso = this.findById(id);
+        cursoRepository.delete(curso);
+    }
 }
