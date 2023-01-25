@@ -41,7 +41,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
           region: us-east-1
-          application_name: treino5aws
+          application_name: treino5-aws
           environment_name: Treino5aws-env
           version_label: treino5aws-${{ github.sha }}
           deployment_package: ./treino5-0.0.1-SNAPSHOT.jar
