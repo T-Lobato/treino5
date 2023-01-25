@@ -27,6 +27,7 @@ jobs:
         path: ./target/treino5-0.0.1-SNAPSHOT.jar
         
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download a Build Artifact
