@@ -25,3 +25,11 @@ jobs:
       with:
         name: app
         path: ./target/treino5-0.0.1-SNAPSHOT.jar
+        
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: app    
