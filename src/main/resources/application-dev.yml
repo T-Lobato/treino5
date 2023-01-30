@@ -1,0 +1,8 @@
+spring:
+  jpa:
+    open-in-view: false
+    database: MYSQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/poc1?createDatabaseIfNotExist=true&useTimezone=tru&serverTimezone=America/Sao_Paulo
+    username: root
+    password: root
